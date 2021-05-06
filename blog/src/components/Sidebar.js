@@ -1,4 +1,4 @@
-import React from 'react';
+import {React,memo} from 'react';
 import {
     NavLink
 } from "react-router-dom";
@@ -6,11 +6,10 @@ import HomeIcon from '@material-ui/icons/Home';
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { getName } from '../helpers/user';
+
+
 const Sidebar = () => {
-    const getName = () => {
-        let jwt = JSON.parse(localStorage.getItem('jwt'));
-        return `${jwt?.data?.name || '-'} - ${jwt?.data?.rol || '-'}`
-    }
 
     return (<>
 
@@ -34,4 +33,4 @@ const Sidebar = () => {
     );
 }
 
-export default Sidebar;
+export default memo(Sidebar);

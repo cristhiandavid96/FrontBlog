@@ -1,5 +1,5 @@
 import { HttpRequest } from '../../helpers/HttpRequest';
-import { React, useEffect, useState } from 'react';
+import { React, useEffect, memo, useState } from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 const ListarBblog = () => {
@@ -8,7 +8,6 @@ const ListarBblog = () => {
         await HttpRequest('http://localhost/api/blogs', null, 'GET').then((response) => {
             let respuesta = JSON.parse(JSON.stringify(response))
             setData(respuesta?.res)
-            // console.log('res',respuesta?.res)
         })
     }
 
@@ -59,4 +58,4 @@ const ListarBblog = () => {
     );
 }
 
-export default ListarBblog;
+export default memo(ListarBblog);

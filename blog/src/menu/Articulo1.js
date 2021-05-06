@@ -1,17 +1,11 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Sidebar from '../components/Sidebar';
-import ListarBblog from './blog/ListarBblog';
-
+import ListarBlog from './blog/ListarBlog';
+import Dashboard from '../components/Dashboard'
 
 const Articulo1 = () => {
     return (
         <>
-            <Navbar />
-            <div className="flex">
-                <Sidebar />
-                <ListarBblog/>
-            </div>
+            {Dashboard(ListarBlog)}
         </>
     );
 }

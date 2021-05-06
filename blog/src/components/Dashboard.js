@@ -1,18 +1,28 @@
-import React from 'react';
-import Navbar from './Navbar';
-import Sidebar from './Sidebar';
-import '../styles/dashboard.scss';
+import { React, memo } from 'react'
+import Navbar from './Navbar'
+import Sidebar from './Sidebar'
+import '../styles/dashboard.scss'
+import { getToken } from '../helpers/user'
+import { Redirect } from 'react-router-dom'
+
+const Dashboard = (InputComponent) => {
 
 
-const Dashboard = () => {
     return (
         <>
-         <Navbar />
-            <div className="flex">
-                <Sidebar />
-            </div>
+            {getToken() ?
+                <>
+                    <Navbar />
+                    <div className="flex">
+                        <Sidebar />
+                        {(InputComponent) && <InputComponent />}
+
+                    </div>
+                </>
+
+                : <Redirect to="/" />}
         </>
-           
+
     );
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import {React,memo} from 'react';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import SettingsIcon from '@material-ui/icons/Settings';
 const Navbar = () => {
@@ -17,4 +17,4 @@ const Navbar = () => {
     );
 }
 
-export default Navbar;
+export default memo(Navbar);

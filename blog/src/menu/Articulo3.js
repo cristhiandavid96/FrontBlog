@@ -1,18 +1,12 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Sidebar from '../components/Sidebar';
 import CrearBlog from './blog/CrearBlog';
+import Dashboard from '../components/Dashboard'
 
 const Articulo3 = () => {
     return (
-        <div>
-           <Navbar />
-            <div className="flex">
-                <Sidebar />
-                <CrearBlog />
-
-            </div>
-        </div>
+        <>
+            {Dashboard(CrearBlog)}
+        </>
     );
 }
 

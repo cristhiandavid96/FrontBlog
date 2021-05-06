@@ -1,15 +1,11 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Sidebar from '../components/Sidebar';
+import React from 'react'
+import Dashboard from '../components/Dashboard'
 
 const Articulo2 = () => {
     return (
-        <div>
-            <Navbar />
-            <div className="flex">
-                <Sidebar />
-            </div>
-        </div>
+        <>
+            {Dashboard()}
+        </>
     );
 }
 
